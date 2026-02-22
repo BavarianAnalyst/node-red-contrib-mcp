@@ -1,0 +1,38 @@
+<script type="text/javascript">
+  RED.nodes.registerType('mcp-server-config', {
+    category: 'config',
+    defaults: {
+      name: { value: '' },
+      url: { value: '', required: true },
+      transportType: { value: 'http' },
+    },
+    credentials: {
+      apiKey: { type: 'password' },
+    },
+    label: function () {
+      return this.name || this.url || 'MCP Server';
+    },
+  });
+</script>
+
+<script type="text/html" data-template-name="mcp-server-config">
+  <div class="form-row">
+    <label for="node-config-input-name"><i class="fa fa-tag"></i> Name</label>
+    <input type="text" id="node-config-input-name" placeholder="My MCP Server">
+  </div>
+  <div class="form-row">
+    <label for="node-config-input-url"><i class="fa fa-globe"></i> URL</label>
+    <input type="text" id="node-config-input-url" placeholder="http://localhost:8080/mcp">
+  </div>
+  <div class="form-row">
+    <label for="node-config-input-transportType"><i class="fa fa-exchange"></i> Transport</label>
+    <select id="node-config-input-transportType">
+      <option value="http">Streamable HTTP (recommended)</option>
+      <option value="sse">SSE (legacy)</option>
+    </select>
+  </div>
+  <div class="form-row">
+    <label for="node-config-input-apiKey"><i class="fa fa-key"></i> API Key</label>
+    <input type="password" id="node-config-input-apiKey" placeholder="Optional — sent as Bearer token">
+  </div>
+</script>

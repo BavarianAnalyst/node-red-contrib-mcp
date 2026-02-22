@@ -1,0 +1,35 @@
+<script type="text/javascript">
+  RED.nodes.registerType('llm-config', {
+    category: 'config',
+    defaults: {
+      name: { value: '' },
+      baseUrl: { value: 'https://api.openai.com/v1', required: true },
+      model: { value: 'gpt-4o', required: true },
+    },
+    credentials: {
+      apiKey: { type: 'password' },
+    },
+    label: function () {
+      return this.name || this.model || 'LLM Provider';
+    },
+  });
+</script>
+
+<script type="text/html" data-template-name="llm-config">
+  <div class="form-row">
+    <label for="node-config-input-name"><i class="fa fa-tag"></i> Name</label>
+    <input type="text" id="node-config-input-name" placeholder="My LLM">
+  </div>
+  <div class="form-row">
+    <label for="node-config-input-baseUrl"><i class="fa fa-globe"></i> Base URL</label>
+    <input type="text" id="node-config-input-baseUrl" placeholder="https://api.openai.com/v1">
+  </div>
+  <div class="form-row">
+    <label for="node-config-input-model"><i class="fa fa-cube"></i> Model</label>
+    <input type="text" id="node-config-input-model" placeholder="gpt-4o">
+  </div>
+  <div class="form-row">
+    <label for="node-config-input-apiKey"><i class="fa fa-key"></i> API Key</label>
+    <input type="password" id="node-config-input-apiKey" placeholder="sk-...">
+  </div>
+</script>

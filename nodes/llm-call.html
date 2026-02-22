@@ -1,0 +1,75 @@
+<script type="text/javascript">
+  RED.nodes.registerType('llm-call', {
+    category: 'MCP',
+    color: '#FF7043',
+    defaults: {
+      name: { value: '' },
+      llmConfig: { value: '', type: 'llm-config', required: true },
+      systemPrompt: { value: '' },
+      temperature: { value: 0.3 },
+      jsonMode: { value: false },
+      maxTokens: { value: 4096 },
+    },
+    inputs: 1,
+    outputs: 1,
+    icon: 'font-awesome/fa-comment',
+    paletteLabel: 'llm call',
+    label: function () {
+      return this.name || 'llm call';
+    },
+  });
+</script>
+
+<script type="text/html" data-template-name="llm-call">
+  <div class="form-row">
+    <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+    <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+  <div class="form-row">
+    <label for="node-input-llmConfig"><i class="fa fa-magic"></i> LLM</label>
+    <input type="text" id="node-input-llmConfig">
+  </div>
+  <div class="form-row">
+    <label for="node-input-systemPrompt"><i class="fa fa-file-text-o"></i> System</label>
+    <textarea id="node-input-systemPrompt" rows="4" style="width:70%" placeholder="Optional system prompt..."></textarea>
+  </div>
+  <div class="form-row">
+    <label for="node-input-temperature"><i class="fa fa-thermometer-half"></i> Temp</label>
+    <input type="number" id="node-input-temperature" min="0" max="2" step="0.1" style="width:80px">
+  </div>
+  <div class="form-row">
+    <label for="node-input-maxTokens"><i class="fa fa-text-width"></i> Max Tokens</label>
+    <input type="number" id="node-input-maxTokens" min="1" max="128000" style="width:120px">
+  </div>
+  <div class="form-row">
+    <label>&nbsp;</label>
+    <input type="checkbox" id="node-input-jsonMode" style="width:auto; margin-right:5px">
+    <label for="node-input-jsonMode" style="width:auto">JSON mode</label>
+  </div>
+</script>
+
+<script type="text/html" data-help-name="llm-call">
+  <p>Calls an OpenAI-compatible LLM API.</p>
+  <h3>Inputs</h3>
+  <dl class="message-properties">
+    <dt>payload <span class="property-type">string</span></dt>
+    <dd>The user message to send to the LLM.</dd>
+    <dt class="optional">messages <span class="property-type">array</span></dt>
+    <dd>Previous conversation messages (for multi-turn).</dd>
+    <dt class="optional">tools <span class="property-type">array</span></dt>
+    <dd>OpenAI-format tool definitions.</dd>
+  </dl>
+  <h3>Outputs</h3>
+  <dl class="message-properties">
+    <dt>payload <span class="property-type">string</span></dt>
+    <dd>The LLM response text.</dd>
+    <dt>llmResponse <span class="property-type">object</span></dt>
+    <dd>Full response message object.</dd>
+    <dt class="optional">toolCalls <span class="property-type">array</span></dt>
+    <dd>Tool calls requested by the LLM (if any).</dd>
+    <dt>usage <span class="property-type">object</span></dt>
+    <dd>Token usage stats.</dd>
+  </dl>
+  <h3>Details</h3>
+  <p>Works with any OpenAI-compatible API: OpenAI, Anthropic (via proxy), Ollama, vLLM, LiteLLM, etc.</p>
+</script>

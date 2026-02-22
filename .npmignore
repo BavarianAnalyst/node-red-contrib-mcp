@@ -1,0 +1,6 @@
+.git/
+.github/
+examples/
+*.md
+!README.md
+.DS_Store

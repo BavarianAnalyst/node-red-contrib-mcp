@@ -1,0 +1,48 @@
+{
+  "name": "node-red-contrib-mcp",
+  "version": "1.0.0",
+  "description": "MCP (Model Context Protocol) nodes for Node-RED — connect AI agents to any MCP server",
+  "keywords": [
+    "node-red",
+    "mcp",
+    "model-context-protocol",
+    "ai",
+    "agent",
+    "agentic",
+    "llm",
+    "openai",
+    "anthropic",
+    "manufacturing",
+    "iiot",
+    "automation",
+    "tools"
+  ],
+  "author": "OpenShopFloor <hello@zeroguess.ai>",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BavarianAnalyst/node-red-contrib-mcp.git"
+  },
+  "homepage": "https://github.com/BavarianAnalyst/node-red-contrib-mcp",
+  "bugs": {
+    "url": "https://github.com/BavarianAnalyst/node-red-contrib-mcp/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1"
+  },
+  "node-red": {
+    "version": ">=3.0.0",
+    "nodes": {
+      "mcp-server-config": "nodes/mcp-server-config.js",
+      "llm-config": "nodes/llm-config.js",
+      "mcp-tool-call": "nodes/mcp-tool-call.js",
+      "mcp-tool-list": "nodes/mcp-tool-list.js",
+      "mcp-resource-read": "nodes/mcp-resource-read.js",
+      "llm-call": "nodes/llm-call.js",
+      "ai-agent": "nodes/ai-agent.js"
+    }
+  }
+}
