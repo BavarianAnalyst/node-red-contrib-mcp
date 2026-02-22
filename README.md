@@ -17,8 +17,11 @@
 
 ---
 
-<!-- TODO: Add screenshot of Node-RED editor showing MCP nodes in action -->
-<!-- <p align="center"><img src="docs/screenshot.png" alt="node-red-contrib-mcp screenshot" width="800" /></p> -->
+<p align="center">
+  <img src="docs/screenshot.png" alt="AI agent flow in Node-RED — manufacturing OEE deep analysis using MCP tools" width="800" />
+  <br>
+  <em>Multi-phase OEE analysis agent built with MCP tool nodes in Node-RED</em>
+</p>
 
 [MCP](https://modelcontextprotocol.io) (Model Context Protocol) is the open standard by Anthropic for connecting AI to external tools and data. **This package brings MCP to Node-RED** — the world's most popular low-code platform for industrial automation and IoT.
 
