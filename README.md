@@ -311,7 +311,7 @@ Copy the JSON below, then in Node-RED: **Menu → Import → Paste**
 
 Works with **any MCP server** that supports Streamable HTTP or SSE transport:
 
-- [OpenShopFloor](https://github.com/BavarianAnalyst/openshopfloor) — 91 manufacturing MCP tools (ERP, OEE, QMS, WMS)
+- [OpenShopFloor](https://github.com/BavarianAnalyst/openshopfloor) — 111 manufacturing MCP tools (ERP, OEE, QMS, TMS, UNS, KG)
 - [Anthropic MCP Servers](https://github.com/modelcontextprotocol/servers) — filesystem, GitHub, PostgreSQL, Slack, Google Drive, ...
 - Any custom MCP server you build
 
